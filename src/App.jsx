@@ -1,28 +1,26 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-import  Header  from "./components/Header";
-import  Profile  from "./components/Profile";
-
+import Header from "./components/Header";
+import Profile from "./components/Profile";
 
 function App() {
-  const [tab, setTab] = useState("personal")
+  const [tab, setTab] = useState("personal");
 
   return (
     <>
-    <Header />
-  
-      <main className="h-screen flex flex-col items-center justify-center bg-gray-900 text-white">
+      <Header />
+
+      <main className="h-screen flex flex-col items-center bg-gray-900 text-white pt-20 gap-10">
         <Profile />
 
-
         {/* TABS */}
-        <div>
-          <button onClick={() => setTab("personal")}>
+        <div className="bg-gray-800 px-6 py-2 rounded-lg flex gap-4">
+          <button onClick={() => setTab("personal")} className={``}>
             Personal
           </button>
 
-          <button onClick={() => setTab("education")}>
+          <button onClick={() => setTab("education")} className={``}>
             Education
           </button>
         </div>
@@ -33,9 +31,9 @@ function App() {
 
           {tab === "education" && <>education</>}
         </div>
-    </main>
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
