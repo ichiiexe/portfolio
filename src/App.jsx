@@ -15,13 +15,35 @@ function App() {
         <Profile />
 
         {/* TABS */}
-        <div className="bg-gray-800 px-6 py-2 rounded-lg flex gap-4">
-          <button onClick={() => setTab("personal")} className={``}>
-            Personal
+        <div className="bg-gray-800 rounded-lg flex p-1 gap-2 relative">
+          {/* Personal */}
+          <button
+            onClick={() => setTab("personal")}
+            className="relative px-4 py-2 rounded-lg text-white"
+          >
+            {tab === "personal" && (
+              <motion.div
+                layoutId="tabHighlight"
+                className="absolute inset-0 bg-gray-600 rounded-lg"
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              />
+            )}
+            <span className="relative z-10">Personal</span>
           </button>
 
-          <button onClick={() => setTab("education")} className={``}>
-            Education
+          {/* Education */}
+          <button
+            onClick={() => setTab("education")}
+            className="relative px-4 py-2 rounded-lg text-white"
+          >
+            {tab === "education" && (
+              <motion.div
+                layoutId="tabHighlight"
+                className="absolute inset-0 bg-gray-600 rounded-lg"
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              />
+            )}
+            <span className="relative z-10">Education</span>
           </button>
         </div>
 
