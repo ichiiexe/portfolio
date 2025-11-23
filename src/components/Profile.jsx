@@ -1,9 +1,13 @@
 import NumberUp from "./ui/NumberUp";
+import avatar from "../assets/Avatar.png";
 
 const Profile = ({ projects = 10, schools = 2 }) => {
   return (
     <div className="flex flex-col gap-6 items-center md:flex-row md:items-start">
-      <img className="w-28 h-28 rounded-full bg-gray-200 object-cover" />
+      <img
+        className="w-28 h-28 rounded-full bg-gray-200 object-cover"
+        src={avatar}
+      />
 
       <div className="flex flex-col gap-2">
         <div className="flex flex-col items-center gap-1 md:items-start">
