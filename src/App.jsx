@@ -1,59 +1,66 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import SpaceBackground from "./components/ui/SpaceBackground";
 
 import Header from "./components/Header";
 import Profile from "./components/Profile";
+import Intro from "./components/ui/Intro";
 
 function App() {
+  const [loaded, setLoaded] = useState(false);
   const [tab, setTab] = useState("personal");
 
   return (
     <>
-      <Header />
+      <SpaceBackground />
 
-      <main className="h-screen flex flex-col items-center bg-gray-900 text-white pt-20 gap-10">
-        <Profile />
+      <Intro hasLoaded={() => setLoaded(true)}>
+        <Header />
 
-        {/* TABS */}
-        <div className="bg-gray-800 rounded-lg flex p-1 gap-2 relative">
-          {/* Personal */}
-          <button
-            onClick={() => setTab("personal")}
-            className="relative px-4 py-2 rounded-lg text-white"
-          >
-            {tab === "personal" && (
-              <motion.div
-                layoutId="tabHighlight"
-                className="absolute inset-0 bg-gray-600 rounded-lg"
-                transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              />
-            )}
-            <span className="relative z-10">Personal</span>
-          </button>
+        <main className="h-screen flex flex-col items-center text-white pt-20 gap-10">
+          <Profile hasLoaded={loaded} />
 
-          {/* Education */}
-          <button
-            onClick={() => setTab("education")}
-            className="relative px-4 py-2 rounded-lg text-white"
-          >
-            {tab === "education" && (
-              <motion.div
-                layoutId="tabHighlight"
-                className="absolute inset-0 bg-gray-600 rounded-lg"
-                transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              />
-            )}
-            <span className="relative z-10">Education</span>
-          </button>
-        </div>
+          {/* TABS */}
+          <div className="bg-white/10 rounded-lg flex p-1 gap-2 relative">
+            {/* Personal */}
+            <button
+              onClick={() => setTab("personal")}
+              className="relative px-4 py-2 rounded-lg text-white"
+            >
+              {tab === "personal" && (
+                <motion.div
+                  layoutId="tabHighlight"
+                  className="absolute inset-0 bg-white/10 rounded-lg"
+                  transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                />
+              )}
+              <span className="relative z-10">Personal</span>
+            </button>
 
-        {/* CONTENT */}
-        <div>
-          {tab === "personal" && <>personal</>}
+            {/* Education */}
+            <button
+              onClick={() => setTab("education")}
+              className="relative px-4 py-2 rounded-lg text-white"
+            >
+              {tab === "education" && (
+                <motion.div
+                  layoutId="tabHighlight"
+                  className="absolute inset-0 bg-white/10 rounded-lg"
+                  transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                />
+              )}
+              <span className="relative z-10">Education</span>
+            </button>
+          </div>
 
-          {tab === "education" && <>education</>}
-        </div>
-      </main>
+          {/* CONTENT */}
+          <div>
+            {tab === "personal" && <>personal</>}
+
+            {tab === "education" && <>education</>}
+          </div>
+        </main>
+      </Intro>
     </>
   );
 }

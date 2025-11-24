@@ -1,7 +1,7 @@
 import NumberUp from "./ui/NumberUp";
 import avatar from "../assets/Avatar.png";
 
-const Profile = ({ projects = 10, schools = 2 }) => {
+const Profile = ({ projects = 10, schools = 2, hasLoaded }) => {
   return (
     <div className="flex flex-col gap-6 items-center md:flex-row md:items-start">
       <img
@@ -21,14 +21,14 @@ const Profile = ({ projects = 10, schools = 2 }) => {
           </p>
         </div>
 
-        <div className="flex items-center gap-10 mt-4">
+        <div className="flex justify-center items-center gap-10 mt-4 md:justify-start">
           <div className="flex flex-col items-center">
-            <NumberUp value={projects} />
+            <NumberUp value={projects} start={hasLoaded} />
             <h4>Projects</h4>
           </div>
 
           <div className="flex flex-col items-center">
-            <NumberUp value={schools} />
+            <NumberUp value={schools} start={hasLoaded} />
             <h4>Schools</h4>
           </div>
         </div>

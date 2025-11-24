@@ -6,7 +6,7 @@ import LocationPinIcon from "@mui/icons-material/LocationPin";
 
 const Header = () => {
   return (
-    <header className="w-full h-10 bg-gray-800 text-white p-4 flex items-center justify-between">
+    <header className="w-full h-10 bg-transparent text-white p-4 flex items-center justify-between">
       <a
         href=""
         download=""
