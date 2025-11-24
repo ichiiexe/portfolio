@@ -5,7 +5,8 @@ const Intro = ({ children, hasLoaded }) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setOpen(true), 200);
+    const timer = setTimeout(() => setOpen(true), 200);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -14,13 +15,7 @@ const Intro = ({ children, hasLoaded }) => {
         initial="closed"
         animate={open ? "open" : "closed"}
         onAnimationComplete={() => hasLoaded && hasLoaded()}
-        style={{
-          position: "fixed",
-          inset: 0,
-          overflow: "hidden",
-          zIndex: 9999,
-          pointerEvents: "none",
-        }}
+        className="fixed inset-0 overflow-hidden z-9999 pointer-events-none"
       >
         {/* TOP PANEL */}
         <motion.div
@@ -29,14 +24,7 @@ const Intro = ({ children, hasLoaded }) => {
             open: { y: "-100%" },
           }}
           transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1] }}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "50%",
-            background: "#111",
-          }}
+          className="absolute top-0 left-0 w-full h-1/2 bg-[#111]"
         />
 
         {/* BOTTOM PANEL */}
@@ -46,14 +34,7 @@ const Intro = ({ children, hasLoaded }) => {
             open: { y: "100%" },
           }}
           transition={{ duration: 1.5, ease: [0.76, 0, 0, 1] }}
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            width: "100%",
-            height: "50%",
-            background: "#111",
-          }}
+          className="absolute bottom-0 left-0 w-full h-1/2 bg-[#111]"
         />
       </motion.div>
       {children}
