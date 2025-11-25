@@ -1,4 +1,5 @@
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
+import Github from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -18,6 +19,19 @@ const Header = () => {
       </a>
 
       <div className="flex space-x-4">
+        {/* GITHUB */}
+        <div className="flex items-center space-x-2">
+          <Github className="text-lg!" />
+          <a
+            title="GitHub Profile"
+            href="https://github.com/ichiiexe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline text-[12px]"
+          >
+            ichiiexe
+          </a>
+        </div>
         {/* LINKEDIN */}
         <div className="flex items-center space-x-2">
           <LinkedInIcon className="text-lg!" />
