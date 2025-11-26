@@ -2,7 +2,7 @@ import NumberUp from "./ui/NumberUp";
 import StackIcon from "tech-stack-icons";
 import avatar from "../assets/Avatar.png";
 
-const Profile = ({ projects = 10, schools = 2, hasLoaded }) => {
+const Profile = ({ projects, schools = 2, hasLoaded }) => {
   return (
     <div className="flex flex-col gap-6 items-center md:flex-row md:items-start">
       <img

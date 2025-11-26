@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import personalProjectData from "./data/personalProjectData";
 
@@ -21,7 +21,7 @@ function App() {
 
         <main className="h-screen flex flex-col items-center text-white pt-20">
           <div className="max-w-4xl w-full flex flex-col items-center gap-10">
-            <Profile hasLoaded={loaded} />
+            <Profile hasLoaded={loaded} projects={personalProjectData.length} />
 
             {/* TABS */}
             <div className="bg-white/10 rounded-lg flex p-1 gap-2 relative">

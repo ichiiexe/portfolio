@@ -1,50 +1,72 @@
 import project1 from "../assets/projects/Tipper-splitter/logo.png";
+import project1img1 from "../assets/projects/Tipper-splitter/splitter-tipper.png";
+
 import project2 from "../assets/projects/Aniflix/logo.png";
+import project2img1 from "../assets/projects/Aniflix/aniflix_home.png";
+import project2img2 from "../assets/projects/Aniflix/aniflix_home2.png";
+import project2img3 from "../assets/projects/Aniflix/aniflix_login.png";
+import project2img4 from "../assets/projects/Aniflix/aniflix_watch.png";
+import project2img5 from "../assets/projects/Aniflix/aniflix_watch2.png";
+
+import project3 from "../assets/projects/typeRacer/logo.png";
+import project3img1 from "../assets/projects/typeRacer/typeracer_home.png";
+import project3img2 from "../assets/projects/typeRacer/typeracer_home2.png";
+import project3img3 from "../assets/projects/typeRacer/typeracer_login.png";
 
 const personalProjectData = [
   {
     id: 1,
     title: "Tipper/Splitter",
-    img: project1,
+    logo: project1,
+    imgs: [project1, project1img1],
     description:
       "Tipper/Splitter is a web application that allows users to easily calculate tips and split bills among multiple people. Built with a modern React + Vite frontend and a Node.js + Express backend, it features user authentication with JWT and image uploads via Cloudinary.",
-    technologies: ["React", "Vite", "Tailwind CSS"],
-    link: "",
-    github: "",
+    technologies: ["react", "vitejs", "tailwindcss"],
+    link: "https://ichiiexe.github.io/tipper-splitter-/",
+    github: "https://github.com/ichiiexe/tipper-splitter-",
   },
   {
     id: 2,
-    title: "Aniflix(in Progress)",
-    img: project2,
-    description:
-      "Aniflix combines a fast React (Vite) frontend with a Node/Express backend and a separate TypeScript-based provider API to deliver an all-in-one anime discovery and streaming experience. The UI is mobile-first and responsive (Tailwind CSS), with a video player capable of playback for HLS streams (Hls.js), subtitle rendering and efficient image handling. The backend supports user authentication, media uploads via Cloudinary, and optional manifest proxying when necessary. Provider logic and scraping are handled by a dedicated TypeScript microservice (api.consumet.org), letting the app query many sources in a unified, performant API.",
-    technologies: [
-      "React",
-      "Vite",
-      "Tailwind CSS",
-      "Framer Motion",
-      "React Router",
-      "Node.js",
-      "Express",
-      "Cloudinary",
-      "TypeScript",
+    title: "Aniflix (in Progress)",
+    logo: project2,
+    imgs: [
+      project2,
+      project2img1,
+      project2img2,
+      project2img3,
+      project2img4,
+      project2img5,
     ],
-    link: "",
-    github: "",
+    description:
+      "Aniflix is an anime discovery and streaming platform built with a fast React (Vite) frontend, a Node.js/Express backend, and a dedicated TypeScript provider API. It features a responsive Tailwind CSS UI, an advanced HLS.js video player with subtitle support, and optimized image handling. The backend enables user authentication, Cloudinary media uploads, and optional manifest proxying, while a separate microservice (api.consumet.org) handles scraping and multi-source aggregation through a unified API.",
+    technologies: [
+      "react",
+      "vitejs",
+      "tailwindcss",
+      "framer",
+      "reactrouter",
+      "nodejs",
+      "expressjs",
+      "cloudinary",
+      "typescript",
+    ],
+    link: "https://ichiiexe.github.io/tipper-splitter-/",
+    github: "https://github.com/ichiiexe/tipper-splitter-",
   },
   {
     id: 3,
-    title: "TypeRacer(In Progress)",
-    img: project2,
+    title: "TypeRacer (In Progress)",
+    logo: project3,
+    imgs: [project3, project3img2, project3img1, project3img3],
     description:
       "TypeRacer is a fast, real‑time typing game built with a modern React + Vite frontend and an Express + Socket.IO backend. It supports singleplayer practice and multiplayer rooms with live position updates, text generation, and result tracking in MongoDB.",
     technologies: [
-      "React",
-      "Vite",
-      "Tailwind CSS",
-      "Node.js",
-      "Express",
-      "MongoDB",
+      "react",
+      "vitejs",
+      "tailwindcss",
+      "nodejs",
+      "expressjs",
+      "mongodb",
     ],
     link: "",
     github: "",
