@@ -13,6 +13,7 @@ import project3img1 from "../assets/projects/typeRacer/typeracer_home.png";
 import project3img2 from "../assets/projects/typeRacer/typeracer_home2.png";
 import project3img3 from "../assets/projects/typeRacer/typeracer_login.png";
 
+import project4 from "../assets/projects/Weatherizt/logo.png";
 const personalProjectData = [
   {
     id: 1,
@@ -58,6 +59,24 @@ const personalProjectData = [
     title: "TypeRacer (In Progress)",
     logo: project3,
     imgs: [project3, project3img2, project3img1, project3img3],
+    description:
+      "TypeRacer is a fast, real‑time typing game built with a modern React + Vite frontend and an Express + Socket.IO backend. It supports singleplayer practice and multiplayer rooms with live position updates, text generation, and result tracking in MongoDB.",
+    technologies: [
+      "react",
+      "vitejs",
+      "tailwindcss",
+      "nodejs",
+      "expressjs",
+      "mongodb",
+    ],
+    link: "",
+    github: "",
+  },
+  {
+    id: 4,
+    title: "Weather App",
+    logo: project4,
+    imgs: [project4, project3img2, project3img1, project3img3],
     description:
       "TypeRacer is a fast, real‑time typing game built with a modern React + Vite frontend and an Express + Socket.IO backend. It supports singleplayer practice and multiplayer rooms with live position updates, text generation, and result tracking in MongoDB.",
     technologies: [
