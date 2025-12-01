@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Profile from "./components/Profile";
 import Intro from "./components/ui/Intro";
 import Grid from "./components/ui/Grid";
+import Timeline from "./components/ui/Timeline";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -60,7 +61,7 @@ function App() {
 
             {tab === "personal" && <Grid data={personalProjectData} />}
 
-            {tab === "education" && <>education</>}
+            {tab === "education" && <Timeline />}
           </div>
         </main>
       </Intro>
