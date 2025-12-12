@@ -1,33 +1,39 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
-function TimelineItem({ year, text }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "-20% 0px -20% 0px", once: true });
-
+const TimelineItem = ({ item, index }) => {
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 60 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      className="flex items-start my-16"
+    <div
+      className="flex h-[80vh] w-full items-center justify-center"
+      style={{ scrollSnapAlign: "start" }}
     >
-        
-      {/* YEAR */}
-      <div className="w-1/2 text-right pr-6">
-        <span className="text-xl font-semibold">{year}</span>
-      </div>
+      <div className="grid w-full max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-12 px-8">
+        {/* Year */}
+        <motion.div
+          className="flex justify-end text-right text-8xl font-bold text-blue-500"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: index * 0.2 }}
+        >
+          {item.year}
+        </motion.div>
 
-      {/* CONTENT*/}
-      <div className="w-1/2 pl-6">
-        <div className=" shadow-lg border-l-4 border-blue-600 p-5 rounded-lg bg-white/10 backdrop-blur-md">
-          {text}
-        </div>
-      </div>
+        {/* Spacer for center line */}
+        <div className="w-0.5" />
 
-    </motion.div>
+        {/* Content */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: index * 0.3 }}
+        >
+          <h2 className="mb-4 text-5xl font-bold tracking-tight">
+            {item.title}
+          </h2>
+          <p className="text-xl leading-relaxed">{item.description}</p>
+        </motion.div>
+      </div>
+    </div>
   );
-}
+};
 
 export default TimelineItem;

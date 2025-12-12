@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import personalProjectData from "./data/personalProjectData";
+import schoolProjectData from "./data/schoolProjectData";
 
 import SpaceBackground from "./components/ui/SpaceBackground";
 import Header from "./components/Header";
@@ -61,7 +62,7 @@ function App() {
 
             {tab === "personal" && <Grid data={personalProjectData} />}
 
-            {tab === "education" && <Timeline />}
+            {tab === "education" && <Timeline items={schoolProjectData} />}
           </div>
         </main>
       </Intro>
