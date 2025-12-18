@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header className="w-full h-10 bg-transparent text-white p-4 flex items-center justify-between">
       <a
-        href=""
+        href="/Resume-Albert-Jefferson-Abuy-2025.pdf"
         download=""
         title="Download Resume"
         className="flex items-center space-x-1"
@@ -48,15 +48,15 @@ const Header = () => {
         {/* EMAIL */}
         <div className="flex items-center space-x-2">
           <EmailIcon className="text-lg!" />
-          <a title="email@example.com" className="hidden md:inline text-[12px]">
-            email@example.com
+          <a title="jeffabuy@gmail.com" className="hidden md:inline text-[12px]" href="mailto:jeffabuy@gmail.com">
+            jeffabuy@gmail.com
           </a>
         </div>
         {/* PHONE */}
         <div className="flex items-center space-x-2">
           <PhoneIcon className="text-lg!" />
-          <a title="+123 456 7890" className="hidden md:inline text-[12px]">
-            +123 456 7890
+          <a title="+30 693 184 0084" className="hidden md:inline text-[12px]" href="tel:+306931840084"  >
+            +30 693 184 0084 
           </a>
         </div>
         {/* LOCATION */}

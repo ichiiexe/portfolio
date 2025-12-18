@@ -6,15 +6,16 @@ const TimelineItem = ({ item, index }) => {
       className="flex h-[80vh] w-full items-center justify-center"
       style={{ scrollSnapAlign: "start" }}
     >
-      <div className="grid w-full max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-12 px-8">
+      <div className="grid w-full max-w-8xl grid-cols-[1fr_auto_1fr] items-center gap-12 px-8">
         {/* Year */}
         <motion.div
-          className="flex justify-end text-right text-8xl font-bold text-blue-500"
+          className="flex justify-end text-right text-8xl font-bold text-white/40 relative"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: index * 0.2 }}
         >
           {item.year}
+          <span className="absolute -bottom-5 text-lg ">{item.range}</span>
         </motion.div>
 
         {/* Spacer for center line */}
@@ -26,10 +27,13 @@ const TimelineItem = ({ item, index }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: index * 0.3 }}
         >
-          <h2 className="mb-4 text-5xl font-bold tracking-tight">
-            {item.title}
-          </h2>
-          <p className="text-xl leading-relaxed">{item.description}</p>
+      
+            <h2 className="mb-4 text-5xl font-bold tracking-tight">
+              {item.title}
+            </h2>
+    
+
+          <p className="text-md leading-relaxed">{item.description}</p>
         </motion.div>
       </div>
     </div>
