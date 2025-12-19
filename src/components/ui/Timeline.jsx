@@ -34,7 +34,7 @@ const Timeline = ({ items }) => {
   return (
     <div className="relative h-[80vh] w-full overflow-hidden bg-transparent text-white">
       {/* Center line with fades */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 z-20 h-[50vh] w-0.5 -translate-x-1/2 -translate-y-1/2">
+      <div className="pointer-events-none absolute md:left-1/2 top-1/2 md: left-3 z-20 h-[50vh] w-0.5 -translate-x-1/2 -translate-y-1/2">
         <div className="absolute left-0 top-0 h-full w-full bg-white" />
         {/* Top fade */}
         <div

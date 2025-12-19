@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import StackIcon from "tech-stack-icons";
 
 import Carousel from "./Carousel";
@@ -8,6 +9,18 @@ import PublicIcon from "@mui/icons-material/Public";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 const GridModal = ({ project, open, onClose }) => {
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [open]);
+
   if (!project || !open) return null;
 
   const images =
@@ -26,12 +39,13 @@ const GridModal = ({ project, open, onClose }) => {
       {/* Modal */}
       <motion.div
         className="fixed inset-0 flex items-center justify-center z-50 px-4"
+        onClick={onClose}
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: 20 }}
         transition={{ type: "spring", stiffness: 200, damping: 20 }}
       >
-        <div className="bg-white/20 rounded-xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-xs border border-white/30 max-w-3xl max-h-[90vh] overflow-y-auto p-6 relative text-white">
+        <div className="bg-white/20 rounded-xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-xs border border-white/30 max-w-3xl max-h-[90vh] overflow-y-auto p-6 relative text-white" onClick={(e) => e.stopPropagation()}>
           <CloseIcon
             onClick={onClose}
             className="absolute top-4 right-4 cursor-pointer text-white"
