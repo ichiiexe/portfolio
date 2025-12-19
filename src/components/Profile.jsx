@@ -15,10 +15,7 @@ const Profile = ({ projects, schools = 2, hasLoaded }) => {
           <h1 className="font-extrabold">Albert Jefferson Abuy</h1>
           <h2>Junior Frontend Developer</h2>
           <p className="text-gray-600 max-w-xl mx-10 md:m-0">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae
-            modi soluta rem ipsa ullam aut, minima quibusdam voluptatem earum
-            porro iure commodi quasi distinctio, error et reiciendis delectus?
-            Fugiat, repellat?
+            I build modern, interactive websites using React and Framer Motion, focusing on smooth animations, micro-interactions, and engaging user experiences. I enjoy blending clean code with thoughtful motion to create interfaces that feel alive and performant.
           </p>
         </div>
 
